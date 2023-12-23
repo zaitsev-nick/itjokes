@@ -41,9 +41,9 @@ export default function UploadPage() {
       formData.append('file', file);
     }
 
-    formData.append('upload_preset', 'my-uploads');
+    formData.append('upload_preset', 'itjokespreset');
 
-    const data = await fetch('https://api.cloudinary.com/v1_1/[Your Cloudinary Cloud Name]/image/upload', {
+    const data = await fetch('https://api.cloudinary.com/v1_1/hcvinbebd/image/upload', {
       method: 'POST',
       body: formData
     }).then(r => r.json());
@@ -89,7 +89,7 @@ export default function UploadPage() {
       </main>
 
       <footer className={styles.footer}>
-        <p>Find the tutorial on <a href="https://spacejelly.dev/">spacejelly.dev</a>!</p>
+        
       </footer>
     </div>
   )
