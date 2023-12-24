@@ -2,19 +2,25 @@
 export default function Home() {
 
   return (
-    <>
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div className="md:flex">
-          <div className="md:shrink-0">
-            <img className="h-48 w-full object-cover md:h-full md:w-48" src="/bg-login.jpg" alt="Modern building architecture" />
-          </div>
-          <div className="p-8">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Company retreats</div>
-            <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Incredible accommodation for your team</a>
-            <p className="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p>
-          </div>
+    <div className="p-5 sm:p-8">
+        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+            <img src="https://source.unsplash.com/bYuI23mnmDQ"/>
+            <img src="https://source.unsplash.com/Nllx4R-2c3o"/>
+            <img src="https://source.unsplash.com/lp40q07DIe0"/>
+            <img src="https://source.unsplash.com/wfalq01jJuU"/>
+            <img src="https://source.unsplash.com/rMHNK_skwwU"/>
+            <img src="https://source.unsplash.com/WBMjuGpbrCQ"/>
+            <img src="https://source.unsplash.com/nCUZ5BYBL_o"/>
+            <img src="https://source.unsplash.com/3u4fzMQZhjc"/>
+            <img src="https://source.unsplash.com/haOIqIPSwps"/>
+            <img src="https://source.unsplash.com/3UrYD7NNVxk"/>
+            <img src="https://source.unsplash.com/fm1JKDItlVM"/>
+            <img src="https://source.unsplash.com/qPpq1EVs8vw"/>
+            <img src="https://source.unsplash.com/xRyL63AwZFE"/>
+            <img src="https://source.unsplash.com/XeNKWTiCPNw"/>
+            <img src="https://source.unsplash.com/DFt3T5r_4FE"/>
+            <img src="https://source.unsplash.com/Ebwp2-6BG8E"/>
         </div>
-      </div>
-    </>
+    </div>
   )
 }
