@@ -8,7 +8,7 @@ export default function LayoutMain({ children }:
   return (
     <>
       <Header />
-      <main className={styles.layout}>
+      <main className="w-full m-auto">
         <div>{children}</div>
       </main>
     </>

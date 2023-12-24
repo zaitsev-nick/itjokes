@@ -3,21 +3,18 @@ import type { Metadata } from 'next';
 import UploadForm from './UploadForm';
 
 export const metadata: Metadata = {
-  title: '...',
-  description: '...',
+  title: 'Add IT Joke',
+  description: 'Here you can upload any IT joke image',
 }
 
 export default function UploadPage() {
 
   return (
-    <div className='container'>
-
-        <h1 className="">
-          Image Uploader
-        </h1>
-
-        <UploadForm />
-
+    <div className="">
+      <h1 className="font-mono text-2xl lg:text-4xl mt-4 text-center">
+        Add IT Joke
+      </h1>
+      <UploadForm />
     </div>
   )
 }

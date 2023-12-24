@@ -1,4 +1,5 @@
 import { db } from '@/lib/db';
+import type { JokeInDB } from '@/types/types'
 import { NextResponse } from 'next/server';
 
 // POST /api/upload
