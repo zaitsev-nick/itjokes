@@ -13,8 +13,11 @@ datasource db {
 model Jokes {
   id        Int      @id @default(autoincrement())
   title     String   
-  text   String   
-  image     String   
-  author    String
+  text      String   
+  image_url String   
+  width     Int
+  height    Int
+  format    String
+  bytes     Int
   createdAt DateTime @default(now())
 }
