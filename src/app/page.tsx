@@ -1,5 +1,20 @@
 
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  const getJokes = async () => {
+    const jokes = await fetch('http://localhost:3000/api/jokes').then((res) => res.json());
+    return jokes;
+  }
+ 
+  useEffect(() => {
+    const AllJokes = getJokes();
+    setData(AllJokes);
+  }, []);
 
   return (
     <div className="p-5 sm:p-8">

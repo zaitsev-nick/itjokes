@@ -6,6 +6,8 @@ import type { Joke } from '@/types/types'
 export default function Home() {
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
+  const [title, setTitle] = useState();
+  const [text, setText] = useState();
 
   const addToDatabase = async (data: Joke) => {
     const { width, height, format, bytes, secure_url } = data;
@@ -18,8 +20,8 @@ export default function Home() {
         },
         body: JSON.stringify({
           image_url: secure_url,
-          title: 'title',
-          text: 'text',
+          title,
+          text,
           width,
           height,
           format,
@@ -106,7 +108,7 @@ export default function Home() {
           {imageSrc && !uploadData && (
             <div className="bg-white py-4 rounded">
               <div className="relative bg-inherit">
-                <input type="text" id="title" name="title" className=" peer bg-transparent w-full rounded text-gray-900 placeholder-transparent ring-2 px-2 ring-gray-900 focus:outline-none focus:border-gray-900" placeholder="Type joke title here"/>
+                <input type="text" id="title" name="title" className=" peer bg-transparent w-full rounded text-gray-900 placeholder-transparent ring-2 px-2 ring-gray-900 focus:outline-none focus:border-gray-900" onChange={(e) => setTitle(e.target.value)} placeholder="Type joke title here"/>
                 <label htmlFor="title" className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-gray-500 peer-focus:text-sm transition-all">Type joke title here</label>
               </div>
             </div>
@@ -117,7 +119,7 @@ export default function Home() {
           {imageSrc && !uploadData && (
             <div className="bg-white py-4 rounded">
               <div className="relative bg-inherit">
-                <textarea id="text" name="text" className=" peer bg-transparent w-full rounded text-gray-900 placeholder-transparent ring-2 px-2 ring-gray-900 focus:outline-none focus:border-gray-900" placeholder="Type joke"/>
+                <textarea id="text" name="text" className=" peer bg-transparent w-full rounded text-gray-900 placeholder-transparent ring-2 px-2 ring-gray-900 focus:outline-none focus:border-gray-900" onChange={(e) => setText(e.target.value)} placeholder="Type joke"/>
                 <label htmlFor="text" className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-gray-500 peer-focus:text-sm transition-all">Joke text</label>
               </div>
             </div>

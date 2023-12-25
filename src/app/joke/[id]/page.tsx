@@ -30,12 +30,3 @@ export default function Joke({ params }: { params: { id: number |  string  } }) 
 
   return <div>My Post: {joke.title}</div>
 }
-
-/*
-export async function generateStaticParams() {
-  console.log("->RUN 1");
-  const posts = await fetch('http://localhost:3000/api/jokes').then((res) => res.json())
-  return posts.map((post) => ({
-   id: post.id.toString()
-  }))
-} */
