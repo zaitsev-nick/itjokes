@@ -9,7 +9,7 @@ export default function Home() {
 
   const addToDatabase = async (data: Joke) => {
     const { width, height, format, bytes, secure_url } = data;
-    console.log(secure_url)
+ 
     try {
       const response = await fetch('api/upload', {
         method: 'POST',
@@ -132,9 +132,6 @@ export default function Home() {
             </div>
           )}
 
-          {uploadData && (
-            <code><pre>{JSON.stringify(uploadData, null, 2)}</pre></code>
-          )}
         </form>
 
     </div>
