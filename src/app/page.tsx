@@ -4,37 +4,18 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
-  const getJokes = async () => {
-    const jokes = await fetch('http://localhost:3000/api/jokes').then((res) => res.json());
-    return jokes;
-  }
- 
   useEffect(() => {
-    const AllJokes = getJokes();
-    setData(AllJokes);
+    fetch('http://localhost:3000/api/jokes')
+    .then((res) => res.json())
+    .then((data) => setData(data))
   }, []);
 
   return (
     <div className="p-5 sm:p-8">
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-            <img src="https://source.unsplash.com/bYuI23mnmDQ"/>
-            <img src="https://source.unsplash.com/Nllx4R-2c3o"/>
-            <img src="https://source.unsplash.com/lp40q07DIe0"/>
-            <img src="https://source.unsplash.com/wfalq01jJuU"/>
-            <img src="https://source.unsplash.com/rMHNK_skwwU"/>
-            <img src="https://source.unsplash.com/WBMjuGpbrCQ"/>
-            <img src="https://source.unsplash.com/nCUZ5BYBL_o"/>
-            <img src="https://source.unsplash.com/3u4fzMQZhjc"/>
-            <img src="https://source.unsplash.com/haOIqIPSwps"/>
-            <img src="https://source.unsplash.com/3UrYD7NNVxk"/>
-            <img src="https://source.unsplash.com/fm1JKDItlVM"/>
-            <img src="https://source.unsplash.com/qPpq1EVs8vw"/>
-            <img src="https://source.unsplash.com/xRyL63AwZFE"/>
-            <img src="https://source.unsplash.com/XeNKWTiCPNw"/>
-            <img src="https://source.unsplash.com/DFt3T5r_4FE"/>
-            <img src="https://source.unsplash.com/Ebwp2-6BG8E"/>
+            {data && data.map((item) => <img src={item.image_url} key={item.id}></img>)}
         </div>
     </div>
   )
