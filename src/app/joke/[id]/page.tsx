@@ -40,16 +40,16 @@ export default function Joke({ params }: JokeParams) {
   console.log(joke)
 
   return (
-    <>
+    <div className="p-5 sm:p-8">
       {loading ? (
         <div className="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
           <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
         </div>
       ) : (
-        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-            {joke?.title}
+        <div className="mt-6 m-auto space-y-6 w-full sm:w-8/12 md:w-7/12">
+          <img src={joke?.image_url} />
         </div>
       )}
-    </>
+    </div>
   )
 }

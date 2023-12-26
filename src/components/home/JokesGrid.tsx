@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -17,6 +16,11 @@ export default function JokesGrid() {
     })
   }, []);
 
+  function goToJoke(id) {
+    window.location.href = `http://localhost:3000/joke/${id}`;
+    return;
+  }
+
   return (
     <div className="p-5 sm:p-8">
       {loading ? (
@@ -25,7 +29,7 @@ export default function JokesGrid() {
         </div>
       ) : (
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-            {data && data.map((item) => <img src={item.image_url} key={item.id} className="border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm"></img>)}
+            {data && data.map((item) => <img onClick={() => goToJoke(item.id)} src={item.image_url} key={item.id} className="border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm cursor-pointer"></img>)}
         </div>
       )}
     </div>
