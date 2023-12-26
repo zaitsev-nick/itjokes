@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react';
 import { Header } from './header/Header';
+import { Footer } from './footer/Footer';
 import styles from './LayoutMain.module.scss';
+import cx from 'classnames';
 
 
 export default function LayoutMain({ children }:
@@ -8,9 +10,10 @@ export default function LayoutMain({ children }:
   return (
     <>
       <Header />
-      <main className="w-full m-auto">
+      <main className={cx(styles.layout, 'w-full m-auto')}>
         <div>{children}</div>
       </main>
+      <Footer />
     </>
   )
 }

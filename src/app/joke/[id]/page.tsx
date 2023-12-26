@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Joke({ params }: { params: { id: number |  string  } }) {
+type JokeParams = {
+  params: { id: number | string }
+}
+
+export default function Joke({ params }: JokeParams) {
   const [joke, setJoke] = useState();
   const [loading, setLoading] = useState(false);
 

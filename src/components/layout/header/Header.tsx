@@ -1,6 +1,3 @@
-'use client'
-
-
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import cx from 'classnames';
