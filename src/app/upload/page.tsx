@@ -4,7 +4,7 @@ import UploadForm from './UploadForm';
 
 export const metadata: Metadata = {
   title: 'Add IT Joke',
-  description: 'Here you can upload any IT joke image',
+  description: 'You can upload and share IT joke image',
 }
 
 export default function UploadPage() {

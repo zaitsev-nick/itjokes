@@ -11,8 +11,8 @@ export async function POST(req: Request) {
     const newJoke = await db.jokes.create({
       data: {
         image_url,
-        title,
-        text,
+        title: title || 'IT Joke image',
+        text: text || 'Share joke and have fun',
         width,
         height,
         format,
