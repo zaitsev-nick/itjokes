@@ -1,9 +1,10 @@
 'use client';
 
+import ShareButtons from '@/components/share/ShareButtons';
 import { useEffect, useState } from 'react';
 
 type JokeParams = {
-  params: { id: number | string }
+  params: { id: number | string };
 }
 
 export default function Joke({ params }: JokeParams) {
@@ -37,8 +38,6 @@ export default function Joke({ params }: JokeParams) {
     }
   }
 
-  console.log(joke)
-
   return (
     <div className="p-5 sm:p-8">
       {loading ? (
@@ -48,6 +47,11 @@ export default function Joke({ params }: JokeParams) {
       ) : (
         <div className="mt-6 m-auto space-y-6 w-full sm:w-8/12 md:w-7/12">
           <img src={joke?.image_url} />
+          <ShareButtons props={{
+              shareUrl: `http://localhost:3000/joke/${joke?.id}`,
+              title: joke?.title || 'IT Joke',
+              image: joke?.image_url,
+            }} />
         </div>
       )}
     </div>

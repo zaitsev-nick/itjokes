@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function JokesGrid() {
+  const router = useRouter();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +19,7 @@ export default function JokesGrid() {
   }, []);
 
   function goToJoke(id) {
-    window.location.href = `http://localhost:3000/joke/${id}`;
+    router.push(`http://localhost:3000/joke/${id}`)
     return;
   }
 
