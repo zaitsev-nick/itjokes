@@ -1,17 +1,18 @@
 export interface Joke {
-  width: Number; 
-  height: Number; 
-  format: String; 
-  bytes: Number; 
-  secure_url: String; 
+  width: number; 
+  height: number; 
+  format: string; 
+  bytes: number; 
+  secure_url: string; 
 }
 
 export interface JokeInDB {
-  width: Number; 
-  height: Number; 
-  format: String; 
-  bytes: Number; 
-  image_url: String,
-  title: String,
-  text: String,
+  id: number; 
+  width: number; 
+  height: number; 
+  format: string; 
+  bytes: number; 
+  image_url: string,
+  title: string,
+  text: string,
 }

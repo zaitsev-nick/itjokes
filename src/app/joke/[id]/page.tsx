@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { JokeItem } from '@/components/layout/joke/JokeItem';
 
 //  Return a list of `params` to populate the [id] dynamic segment
 export async function generateStaticParams() {
@@ -46,10 +47,6 @@ export default async function Joke({ params }: Props) {
   const joke = await getJoke(params);
 
   return (
-    <div className="p-5 sm:p-8">
-        <div className="m-auto space-y-6 w-full sm:w-8/12 md:w-7/12">
-          <img src={joke?.image_url} />
-        </div>
-    </div>
+    <JokeItem props={joke} />
   )
 }
