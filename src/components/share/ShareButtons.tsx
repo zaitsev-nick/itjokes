@@ -50,22 +50,22 @@ return (
     <MailruShareButton url={shareUrl} title={title}  className='mr-2'>
       <MailruIcon size={38} round iconFillColor='white' />
     </MailruShareButton>
-    <PinterestShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <PinterestShareButton  className='mr-2' url={shareUrl} media={image}>
       <PinterestIcon size={38} round iconFillColor='white' />
     </PinterestShareButton>
-    <VKShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <VKShareButton  className='mr-2' url={shareUrl} title={title}>
       <VKIcon size={38} round iconFillColor='white' />
     </VKShareButton>
-    <ViberShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <ViberShareButton  className='mr-2'  url={shareUrl} title={title}>
       <ViberIcon size={38} round iconFillColor='white' />
     </ViberShareButton>
-    <TwitterShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <TwitterShareButton  className='mr-2' url={shareUrl} title={title}>
       <XIcon size={38} round iconFillColor='white' />
     </TwitterShareButton>
-    <WhatsappShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <WhatsappShareButton  className='mr-2'  url={shareUrl} title={title}>
       <WhatsappIcon size={38} round iconFillColor='white' />
     </WhatsappShareButton>
-    <TumblrShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+    <TumblrShareButton  className='mr-2' url={shareUrl} title={title}>
       <TumblrIcon size={38} round iconFillColor='white' />
     </TumblrShareButton>
   </div>
