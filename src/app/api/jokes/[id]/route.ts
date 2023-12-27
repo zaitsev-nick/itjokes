@@ -12,7 +12,7 @@ export async function GET(request: Request) {
 
   const joke = await db.jokes.findUnique({
     where: {
-      id: parseInt(id)
+      id: parseInt(id as string)
     },
   })
 

@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { JokeInDB } from '@/types/types';
 
 export default function JokesGrid() {
   const router = useRouter();
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<JokeInDB[]>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setLoading(true);
@@ -18,7 +19,7 @@ export default function JokesGrid() {
     })
   }, []);
 
-  function goToJoke(id) {
+  function goToJoke(id: number) {
     router.push(`${process.env.NEXT_PUBLIC_URL}/joke/${id}`)
     return;
   }
@@ -31,7 +32,7 @@ export default function JokesGrid() {
         </div>
       ) : (
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-            {data && data.map((item) => <img onClick={() => goToJoke(item.id)} src={item.image_url} key={item.id} className="border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm cursor-pointer"></img>)}
+            {data && data.map((item: JokeInDB) => <img onClick={() => goToJoke(item.id)} src={item.image_url} key={item.id} className="border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm cursor-pointer"></img>)}
         </div>
       )}
     </div>

@@ -7,7 +7,7 @@ export interface Joke {
 }
 
 export interface JokeInDB {
-  id: number; 
+  id: Key; 
   width: number; 
   height: number; 
   format: string; 

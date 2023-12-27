@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -6,10 +6,10 @@ import type { Joke } from '@/types/types'
 
 export default function Home() {
   const router = useRouter();
-  const [imageSrc, setImageSrc] = useState();
+  const [imageSrc, setImageSrc] = useState<any>();
   const [uploadData, setUploadData] = useState();
-  const [title, setTitle] = useState();
-  const [text, setText] = useState();
+  const [title, setTitle] = useState<EventTarget & HTMLInputElement | string>();
+  const [text, setText] = useState<EventTarget & HTMLInputElement | string>();
 
   const addToDatabase = async (data: Joke) => {
     const { width, height, format, bytes, secure_url } = data;
@@ -42,22 +42,22 @@ export default function Home() {
     }
   }
 
-  function handleFileChange(changeEvent) {
+  function handleFileChange(changeEvent: any) {
     const reader = new FileReader();
 
     reader.onload = function(onLoadEvent: ProgressEvent<FileReader>) {
-      setImageSrc(onLoadEvent.target.result);
+      setImageSrc(onLoadEvent?.target?.result);
       setUploadData(undefined);
     }
     
     reader.readAsDataURL(changeEvent.target?.files?.[0]);
   }
 
-  async function handleOnSubmit(event) {
+  async function handleOnSubmit(event: { preventDefault: () => void; currentTarget: any; }) {
     event.preventDefault();
 
     const form = event.currentTarget;
-    const fileInput = Array.from(form.elements).find(({ name }) => name === 'file');
+    const fileInput = Array.from<any>(form.elements).find(({ name }: any) => name === 'file');
 
     const formData = new FormData();
 
