@@ -10,7 +10,7 @@ export default function JokesGrid() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:3000/api/jokes')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jokes`)
     .then((res) => res.json())
     .then((data) => {
       setData(data);
@@ -19,7 +19,7 @@ export default function JokesGrid() {
   }, []);
 
   function goToJoke(id) {
-    router.push(`http://localhost:3000/joke/${id}`)
+    router.push(`${process.env.NEXT_PUBLIC_URL}/joke/${id}`)
     return;
   }
 

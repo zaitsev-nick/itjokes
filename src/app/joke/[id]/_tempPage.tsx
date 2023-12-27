@@ -18,7 +18,7 @@ export default function Joke({ params }: JokeParams) {
  
   async function getJoke(params: { id: number }) {
     try {
-      const resp = await fetch(`http://localhost:3000/api/jokes/${params.id}`, {
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jokes/${params.id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ export default function Joke({ params }: JokeParams) {
         <div className="mt-6 m-auto space-y-6 w-full sm:w-8/12 md:w-7/12">
           <img src={joke?.image_url} />
           <ShareButtons props={{
-              shareUrl: `http://localhost:3000/joke/${joke?.id}`,
+              shareUrl: `${process.env.NEXT_PUBLIC_URL}/joke/${joke?.id}`,
               title: joke?.title || 'IT Joke',
               image: joke?.image_url,
             }} />

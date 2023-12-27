@@ -31,9 +31,9 @@ export default function Home() {
         }),
       });
       const data = await response.json();
-      
+
       if(data) {
-        router.push(`http://localhost:3000/joke/${data?.joke?.id}`)
+        router.push(`${process.env.NEXT_PUBLIC_URL}/joke/${data?.joke?.id}`)
       } else {
         console.log('failed upload')
       }
