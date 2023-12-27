@@ -65,10 +65,10 @@ export default function Home() {
       formData.append('file', file);
     }
 
-    formData.append('upload_preset', process.env.CLOUDINARY_PRESET as string);
+    formData.append('upload_preset', process.env.NEXT_PUBLIC_CLOUDINARY_PRESET as string);
 
     try {
-      const data = await fetch(process.env.CLOUDINARY_URL as string, {
+      const data = await fetch(process.env.NEXT_PUBLIC_CLOUDINARY_URL as string, {
         method: 'POST',
         body: formData
       }).then(response => response.json());
