@@ -1,8 +1,28 @@
 import {
   TelegramIcon,
   TelegramShareButton,
-  EmailIcon,
-  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  FacebookShareCount,
+  LinkedinIcon,
+  LinkedinShareButton,
+  MailruIcon,
+  MailruShareButton,
+  PinterestIcon,
+  PinterestShareButton,
+  PinterestShareCount,
+  TwitterShareButton,
+  XIcon,
+  ViberIcon,
+  ViberShareButton,
+  VKIcon,
+  VKShareButton,
+  VKShareCount,
+  WhatsappIcon,
+  WhatsappShareButton,
+  TumblrIcon,
+  TumblrShareButton,
+  TumblrShareCount,
 } from 'react-share';
 
 type ShareButtonsProps = {
@@ -19,11 +39,35 @@ export default function ShareButtons({ props }: ShareButtonsProps) {
 return (
   <div>
     <TelegramShareButton url={shareUrl} title={title} className='mr-2'>
-      <TelegramIcon size={38} round />
+      <TelegramIcon size={38} round iconFillColor='white' />
     </TelegramShareButton>
-    <EmailShareButton url={shareUrl} subject={title} body="body" className='mr-2'>
-      <EmailIcon size={38} round />
-    </EmailShareButton>
+    <FacebookShareButton url={shareUrl}  className='mr-2'>
+      <FacebookIcon size={38} round iconFillColor='white' />
+    </FacebookShareButton>
+    <LinkedinShareButton url={shareUrl} title={title}  className='mr-2'>
+      <LinkedinIcon size={38} round iconFillColor='white' />
+    </LinkedinShareButton>
+    <MailruShareButton url={shareUrl} title={title}  className='mr-2'>
+      <MailruIcon size={38} round iconFillColor='white' />
+    </MailruShareButton>
+    <PinterestShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <PinterestIcon size={38} round iconFillColor='white' />
+    </PinterestShareButton>
+    <VKShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <VKIcon size={38} round iconFillColor='white' />
+    </VKShareButton>
+    <ViberShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <ViberIcon size={38} round iconFillColor='white' />
+    </ViberShareButton>
+    <TwitterShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <XIcon size={38} round iconFillColor='white' />
+    </TwitterShareButton>
+    <WhatsappShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <WhatsappIcon size={38} round iconFillColor='white' />
+    </WhatsappShareButton>
+    <TumblrShareButton  className='mr-2' children={undefined} url={shareUrl} media={image}>
+      <TumblrIcon size={38} round iconFillColor='white' />
+    </TumblrShareButton>
   </div>
   )
 }

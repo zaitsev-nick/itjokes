@@ -4,16 +4,13 @@ import UploadForm from './UploadForm';
 
 export const metadata: Metadata = {
   title: 'Add IT Joke',
-  description: 'You can upload and share IT joke image',
+  description: 'You can upload and share your favorite joke',
 }
 
 export default function UploadPage() {
 
   return (
-    <div className="">
-      <h1 className="font-mono text-2xl lg:text-4xl mt-4 text-center">
-        Add IT Joke
-      </h1>
+    <div className="p-5 sm:p-8">
       <UploadForm />
     </div>
   )
