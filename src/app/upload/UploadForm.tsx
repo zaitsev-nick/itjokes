@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import type { Joke } from '@/types/types'
 
 export default function Home() {
+  const router = useRouter();
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
   const [title, setTitle] = useState();
@@ -28,9 +30,10 @@ export default function Home() {
           bytes,
         }),
       });
-
-      if(response.ok) {
-        //router.push('/login')
+      const data = await response.json();
+      
+      if(data) {
+        router.push(`http://localhost:3000/joke/${data?.joke?.id}`)
       } else {
         console.log('failed upload')
       }
