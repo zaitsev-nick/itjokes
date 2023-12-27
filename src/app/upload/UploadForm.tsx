@@ -68,7 +68,7 @@ export default function Home() {
     formData.append('upload_preset', 'itjokespreset');
 
     try {
-      const data = await fetch('https://api.cloudinary.com/v1_1/hcvinbebd/image/upload', {
+      const data = await fetch(`${process.env.CLOUDINARY_URL}`, {
         method: 'POST',
         body: formData
       }).then(response => response.json());
