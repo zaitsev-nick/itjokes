@@ -65,7 +65,7 @@ export default function Home() {
       formData.append('file', file);
     }
 
-    formData.append('upload_preset', 'itjokespreset');
+    formData.append('upload_preset', `${process.env.CLOUDINARY_PRESET}`);
 
     try {
       const data = await fetch(`${process.env.CLOUDINARY_URL}`, {
