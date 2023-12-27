@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { JokeItem } from '@/components/layout/joke/JokeItem';
 
 //  Return a list of `params` to populate the [id] dynamic segment
-export async function generateStaticParams() {
+/*export async function generateStaticParams() {
   const jokes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jokes`).then((res) => res.json());
  
   return jokes.map((joke: { id: number }) => ({
     id: `${joke.id}`,
   }));
-}
+}*/
 
 type Props = {
   params: { id: string }
