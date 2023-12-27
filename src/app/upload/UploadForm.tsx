@@ -15,7 +15,7 @@ export default function Home() {
     const { width, height, format, bytes, secure_url } = data;
  
     try {
-      const response = await fetch('api/upload', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
