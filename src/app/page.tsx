@@ -1,10 +1,6 @@
-import type { Metadata } from 'next';
-import JokesGrid from '@/components/home/JokesGrid';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'IT Jokes',
-  description: 'Free to upload and share IT jokes and fave fun',
-}
+import JokesGrid from '@/components/home/JokesGrid';
 
 export default function HomePage() {
 
