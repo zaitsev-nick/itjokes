@@ -16,8 +16,7 @@ export default function JokesGrid() {
       headers: {
         'Content-Type': 'application/json'
       },
-      cache: 'no-store' ,
-      next: { revalidate: 0 }
+      cache: 'no-store',
     })
     .then((res) => res.json())
     .then((data) => {
