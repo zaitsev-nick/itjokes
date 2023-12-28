@@ -11,7 +11,14 @@ export default function JokesGrid() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/jokes`, { cache: 'no-cache' })
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/jokes`, { 
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      cache: 'no-store' ,
+      next: { revalidate: 1 }
+    })
     .then((res) => res.json())
     .then((data) => {
       setData(data);
