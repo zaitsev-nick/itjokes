@@ -10,7 +10,7 @@ export default function LayoutMain({ children }:
   return (
     <>
       <Header />
-      <main className={cx(styles.layout, 'w-full m-auto')}>
+      <main className={cx(styles.layout, 'w-full m-auto bg-gray-100')}>
         <div>{children}</div>
       </main>
       <Footer />
