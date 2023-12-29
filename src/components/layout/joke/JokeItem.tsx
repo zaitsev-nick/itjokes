@@ -10,7 +10,7 @@ export function JokeItem({ props }: { props: JokeInDB }) {
   return (
     <div className="mt-6 mb-12 m-auto space-y-6 w-full sm:w-8/12 md:w-7/12">
       <h1 className='text-2xl'>{title == 'IT Joke image' ? '' : title}</h1>
-      <img src={image_url} />
+      <img src={image_url} alt={title} />
       <p>{text}</p>
       <ShareButtons props={{
           shareUrl: `${process.env.NEXT_PUBLIC_URL}/joke/${id}`,

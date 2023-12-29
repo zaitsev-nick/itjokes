@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: joke.title,
       description: joke.text,
-      url: `${process.env.NEXT_PUBLIC_URL}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/joke/${joke.id}`,
       siteName: 'IT Jokes',
       images: joke.image_url,
     },
