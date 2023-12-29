@@ -26,7 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: joke.text,
       url: `${process.env.NEXT_PUBLIC_URL}/joke/${joke.id}`,
       siteName: 'IT Jokes',
-      images: joke.image_url,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: joke.image_url,
+          width: joke.width,
+          height: joke.height,
+          alt: joke.title,
+        },
+      ],
     },
   }
 }
