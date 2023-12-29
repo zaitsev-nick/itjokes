@@ -42,7 +42,7 @@ export default function JokesGrid() {
   const showMore = 
     <a href="#"  className="relative">
       <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-gray-700"></span>
-      <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-black px-3 py-1 text-base font-bold text-white transition duration-100 hover:bg-gray-900 hover:text-yellow-500 dark:bg-black">Show more</span>
+      <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-black px-6 py-2 text-base font-bold text-white transition duration-100 hover:bg-gray-900 hover:text-yellow-500 dark:bg-black">Show more</span>
     </a>
   ;
 
