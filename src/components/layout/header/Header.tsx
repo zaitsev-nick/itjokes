@@ -13,7 +13,7 @@ export function Header() {
         <nav className='flex flex-wrap md:w-4/5 items-center justify-end text-base md:ml-auto'>
         <Link href='/upload' className='relative'>
           <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-gray-700"></span>
-          <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 dark:bg-transparent">Add a joke</span>
+          <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900">Add a joke</span>
         </Link>
         </nav>
       </div>
