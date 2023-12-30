@@ -20,9 +20,9 @@ export default function JokesGridDesktop() {
   }
 
   const jokes = data || [];
-  const isEmpty = data?.[0]?.length === 0;
-  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < PAGE_SIZE);
-console.log(isReachingEnd)
+  const isEmpty = data?.length === 0;
+  const isReachingEnd = isEmpty || (data?.length < PAGE_SIZE);
+
   const spinner = 
     <div className="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
       <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
@@ -51,15 +51,16 @@ console.log(isReachingEnd)
           <div className="columns-1 gap-5 sm:gap-8 md:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-8">
             {jokes && jokes.map((item: JokeInDB) => <img onClick={() => goToJoke(item.id)} src={item.image_url} key={item.id} className="border border-b-4 border-r-4 border-black rounded-lg shadow-lg hover:shadow-sm cursor-pointer"></img>)}
           </div>
-          <div className='m-6 flex place-content-between'>
+          <div className='m-6 mt-12 flex place-content-around'>
             {pageIndex > 1 ? <button onClick={() => setPageIndex(pageIndex - 1)} className='flex'>
               {prevPage}
             </button> : null}
-            <button 
+
+            {isReachingEnd ? null : <button 
               disabled={isReachingEnd}
               onClick={() => setPageIndex(pageIndex + 1)} className='flex'>
               {nextPage}
-            </button>
+            </button>}
           </div>
         </>
       }
