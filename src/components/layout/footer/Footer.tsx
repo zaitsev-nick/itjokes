@@ -5,9 +5,6 @@ import cx from 'classnames';
 import styles from './Footer.module.scss';
 
 export function Footer() {
-  const imageStyle = {
-    float: 'left',
-  }
 
   return (
     <footer className='bg-white text-gray-900 border-2 border-t-gray-900 w-full' >
@@ -22,7 +19,6 @@ export function Footer() {
             width={40}
             height={40}
             alt="Telegram bot"
-            style={imageStyle}
           />
           Telegram bot
           </a>
