@@ -2,8 +2,6 @@ import { db } from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
-  console.log('request.url',request.url)
-
   let id = request.url.split('/').pop();
 
   if(!id) {

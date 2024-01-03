@@ -52,7 +52,7 @@ async function getJoke(params: { id: string }) {
   return data.joke;
 }
  
-export default async function Joke({ params }: Props) {
+export default async function JokePage({ params }: Props) {
   const joke = await getJoke(params);
 
   return (

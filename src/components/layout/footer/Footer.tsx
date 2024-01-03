@@ -14,8 +14,8 @@ export function Footer() {
         </Link> 
         <div className={cx(styles.footer)}>
           <a href='https://t.me/It_jokes_official_bot'>
-          <Image
-            src="tg.svg"
+          <img
+            src="/tg.svg"
             width={40}
             height={40}
             alt="Telegram bot"
